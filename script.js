@@ -1,9 +1,11 @@
 let peso = parseFloat(prompt("Digite o seu peso (Kg): "))
-let altura = prompt("Digite a sua altura (m): ")
-let imc = 0
+let altura = parseFloat(prompt("Digite a sua altura (m): "))
+// let imc = calcularIMC(peso, altura)
+gerarRelatorio(peso, altura)
 
 function calcularIMC(peso, altura){
-    return peso / (altura * altura)
+    let imc = peso / (altura * altura)
+    return imc
 }
 
 function classificarIMC(imc){
@@ -21,5 +23,9 @@ function classificarIMC(imc){
         alert("Baixo peso")
 }
 }
-console.log(calcularIMC(peso, altura))
-classificarIMC(imc)
+
+function gerarRelatorio(peso, altura){
+        let imc  = calcularIMC(peso, altura) 
+        
+    classificarIMC(imc)
+}
